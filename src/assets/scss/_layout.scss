@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,36 +17,43 @@ code {
 }
 
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100vw;
+  height: 100vh;
+  $sider-width: calc(100% / 3);
+
+  .block {
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+
+    &-left {
+      background-color: $primary-light;
+      width: calc(100% - #{$sider-width});
+    }
+
+    &-right {
+      background-color: $dark;
+      width: $sider-width;
+    }
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
+input {
+  width: 445px;
+  height: 56px;
+  border: none;
+  line-height: 56px;
+  padding: 0 1rem;
+  padding-right: calc(24px + 1rem);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  &:focus {
+    outline: none;
   }
 
-  to {
-    transform: rotate(360deg);
+  &::-webkit-input-placeholder {
+    color: $primary;
+    font-weight: bold;
+    font-style: italic;
   }
 }
