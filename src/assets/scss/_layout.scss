@@ -39,21 +39,39 @@ code {
   }
 }
 
-input {
+main {
   width: 445px;
-  height: 56px;
-  border: none;
-  line-height: 56px;
-  padding: 0 1rem;
-  padding-right: calc(24px + 1rem);
+}
 
-  &:focus {
-    outline: none;
-  }
+.inputBox {
+  position: relative;
 
-  &::-webkit-input-placeholder {
+  input {
+    width: 100%;
+    height: 56px;
+    border: none;
+    line-height: 56px;
+    padding: 0 1rem;
+    padding-right: calc(24px + 1rem);
     color: $primary;
     font-weight: bold;
-    font-style: italic;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $primary;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+
+  a {
+    position: absolute;
+    top: calc( (56px / 2) - 12px );
+    right: 1rem;
+    cursor: pointer;
+    color: $primary;
   }
 }

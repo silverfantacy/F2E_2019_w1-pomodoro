@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="block block-left">
         <main>
-          <InputBox />
+          <InputBox placeholder="ADD A NEW MISSION..."/>
         </main>
       </div>
       <div className="block block-right"></div>
