@@ -1,0 +1,13 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  &_title {
+    line-height: 27px;
+    font-weight: bold;
+    margin-left: .5rem;
+  }
+  i {
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

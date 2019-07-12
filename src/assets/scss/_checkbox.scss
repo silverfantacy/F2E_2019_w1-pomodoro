@@ -1,0 +1,10 @@
+.checkBox {
+  display: inline-block;
+  max-height: 48px;
+  input {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+  }
+}
