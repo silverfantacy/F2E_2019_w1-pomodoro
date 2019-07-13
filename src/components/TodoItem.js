@@ -12,7 +12,7 @@ class TodoItem extends Component {
   render() {
     return (
       <div className="todoItem">
-        <CheckBox completed="false"/>
+        <CheckBox completed={this.state.completed}/>
         <div className="todoItem_title">{this.props.title}</div>
         <i className="material-icons">play_circle_outline</i>
       </div>

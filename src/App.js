@@ -2,6 +2,7 @@ import React from 'react';
 import InputBox from './components/InputBox'
 import CheckBox from './components/CheckBox'
 import TodoItem from './components/TodoItem'
+import Timer from './components/Timer'
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             <div>MORE</div>
           </ul>
         </main>
+        <div className="control-area">
+          <Timer />
+        </div>
       </div>
       <div className="block block-right"></div>
     </div>

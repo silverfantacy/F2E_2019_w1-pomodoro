@@ -4,6 +4,7 @@ class CheckBox extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    this.setState({ completed: !this.props.completed })
     this.state = {
       completed: false,
     }
