@@ -35,7 +35,30 @@ function App() {
           <Timer />
         </div>
       </div>
-      <div className="block block-right"></div>
+      <div className="block block-right">
+        <nav>
+          <ul>
+            <li>
+              <div>
+                <i className="material-icons md-36">list</i>
+              </div>
+            </li>
+            <li>
+              <div>
+                <i className="material-icons md-36">insert_chart</i>
+              </div>
+            </li>
+            <li>
+              <div>
+                <i className="material-icons md-36">library_music</i>
+              </div>
+            </li>
+            <li className="logo-text">
+              <h3 className="mixed">POMODORO</h3>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }

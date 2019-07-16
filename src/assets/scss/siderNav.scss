@@ -1,0 +1,38 @@
+.block-right {
+  display: flex;
+
+  nav {
+    margin-left: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    color: $light;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    li {
+      margin-bottom: 48px;
+      cursor: pointer;
+    }
+  }
+
+  .mixed {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+  }
+
+  .logo-text {
+    margin: 0;
+    margin-top: auto;
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0;
+      font-weight: bolder;
+    }
+  }
+}
