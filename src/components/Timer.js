@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Clock from './Clock'
 
 class Timer extends Component {
   render(h) {
     return (
       <div className="timer">
+        <Clock time="250000" size="575" />
         <div className="timer_main">
           <canvas id="timer—dashboard"></canvas>
           <div className="timer—btn">

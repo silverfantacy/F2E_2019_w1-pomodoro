@@ -1,0 +1,12 @@
+.rv-xy-plot {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 15px), calc(-50% + 15px));
+  z-index: -1;
+
+  &__series &__series--arc-path {
+    fill: #FF4384 !important;
+  }
+}
