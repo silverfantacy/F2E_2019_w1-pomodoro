@@ -2,19 +2,36 @@ import React, { Component } from 'react';
 import Clock from './Clock'
 
 class Timer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timerState: false,
+    }
+  }
   render(h) {
     return (
-      <div className="timer">
+      <div className={`timer ${this.state.timerState ? "active" : ''}`}>
         <Clock time="250000" size="575" />
         <div className="timer_main">
-          <canvas id="timer—dashboard"></canvas>
-          <div className="timer—btn">
+          <div className="timer—btn timer—btn_start" onClick={this.timerStart.bind(this)}>
             <i className="material-icons md-96">play_circle_filled_white</i>
           </div>
-          <div className="timer-btn_stop"></div>
+          <div className="timer—btn timer—btn_pause" onClick={this.timerPause.bind(this)}>
+            <i className="material-icons md-96">pause_circle_filled</i>
+          </div>
+          <div className="timer-btn_stop" onClick={this.timerStop.bind(this)}></div>
         </div>
       </div>
     )
+  }
+  timerStart() {
+    this.setState({ timerState: true })
+  }
+  timerPause() {
+    this.setState({ timerState: false })
+  }
+  timerStop() {
+    this.setState({ timerState: false })
   }
 }
 
