@@ -6,12 +6,13 @@ class Timer extends Component {
     super(props);
     this.state = {
       timerState: false,
+      time: (5 * 60)
     }
   }
   render(h) {
     return (
       <div className={`timer ${this.state.timerState ? "active" : ''}`}>
-        <Clock time="250000" size="575" />
+        <Clock time={this.state.time * 1000} size="575" />
         <div className="timer_main">
           <div className="timer—btn timer—btn_start" onClick={this.timerStart.bind(this)}>
             <i className="material-icons md-96">play_circle_filled_white</i>
@@ -31,7 +32,7 @@ class Timer extends Component {
     this.setState({ timerState: false })
   }
   timerStop() {
-    this.setState({ timerState: false })
+    this.setState({ timerState: false, time: (5 * 60)})
   }
 }
 

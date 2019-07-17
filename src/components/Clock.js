@@ -51,7 +51,7 @@ export default class Clock extends Component {
       >
         <ArcSeries
           animation={{
-            damping: 100,
+            damping: 50,
             stiffness: 300
           }}
           radiusDomain={[0, 3]}
