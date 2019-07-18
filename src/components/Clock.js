@@ -31,6 +31,7 @@ export default class Clock extends Component {
 
   getSeconds() {
     console.log('現在狀況=》',(this.state.time - 1000));
+    this.props.handleVal(this.state.time - 1000);
     return (this.state.time - 1000);
   }
 
@@ -64,7 +65,7 @@ export default class Clock extends Component {
             //   color: 1
             // },
             // { time: (hours / 24) * 2 * PI, radius0: 2.2, radius: 2.7, color: 2 },
-            { time: persent * 2 * PI, radius0: 0, radius: 3.1, color: 0 },
+            { time: persent * 2 * PI, radius0: 0, radius: 3.1, color: 1 },
           ]}
           // colorRange={EXTENDED_DISCRETE_COLOR_RANGE}
         />

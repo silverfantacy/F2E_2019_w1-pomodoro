@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Clock from './Clock'
 
+const style = {
+  color: 'white',
+  zIndex: '5000'
+}
+
 class Timer extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +17,8 @@ class Timer extends Component {
   render(h) {
     return (
       <div className={`timer ${this.state.timerState ? "active" : ''}`}>
-        <Clock time={this.state.time * 1000} size="575" />
+        {/* <h1 style={style}>{this.state.nowTime}</h1> */}
+        <Clock time={this.state.time * 1000} size="575" handleVal={this.handleGet.bind(this)} />
         <div className="timer_main">
           <div className="timer—btn timer—btn_start" onClick={this.timerStart.bind(this)}>
             <i className="material-icons md-96">play_circle_filled_white</i>
@@ -33,6 +39,10 @@ class Timer extends Component {
   }
   timerStop() {
     this.setState({ timerState: false, time: (5 * 60)})
+  }
+  handleGet(val) {
+    console.log(val)
+    this.setState({nowTime :  val});
   }
 }
 
