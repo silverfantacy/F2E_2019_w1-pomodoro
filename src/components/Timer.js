@@ -11,14 +11,14 @@ class Timer extends Component {
     super(props);
     this.state = {
       timerState: false,
-      time: (5 * 60)
+      time: (0.1 * 60)
     }
   }
   render(h) {
     return (
       <div className={`timer ${this.state.timerState ? "active" : ''}`}>
         {/* <h1 style={style}>{this.state.nowTime}</h1> */}
-        <Clock time={this.state.time * 1000} size="575" handleVal={this.handleGet.bind(this)} />
+        <Clock time={this.state.time * 1000} size="575" handleVal={this.handleGet.bind(this)} timerState={this.state.timerState}  resetTime={this.handleTime.bind(this)}/>
         <div className="timer_main">
           <div className="timer—btn timer—btn_start" onClick={this.timerStart.bind(this)}>
             <i className="material-icons md-96">play_circle_filled_white</i>
@@ -42,7 +42,11 @@ class Timer extends Component {
   }
   handleGet(val) {
     console.log(val)
-    this.setState({nowTime :  val});
+    this.setState({ timerState :  val});
+  }
+  handleTime(val) {
+    console.log('handleTime',val)
+    this.setState({ time: val });
   }
 }
 

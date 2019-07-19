@@ -10,18 +10,13 @@ export default class Clock extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      time: this.props.time
+      time: this.props.time,
+      timerState: this.props.timerState
     };
   }
 
   componentDidMount() {
-    this._timerId = setInterval(() => {
-      if (this.state.time === 0) {
-        return
-      }
-      this.setState({ time: this.getSeconds() })  
-      
-    }, 1000)
+    this.countdown();
   }
 
   componentWillUnmount() {
@@ -33,6 +28,20 @@ export default class Clock extends Component {
     console.log('現在狀況=》',(this.state.time - 1000));
     this.props.handleVal(this.state.time - 1000);
     return (this.state.time - 1000);
+  }
+
+  countdown() {
+    setTimeout(() => {
+      if (this.state.time === 0) {
+        if (this.state.time === 0) {
+          this.props.handleVal(false);
+          this.props.resetTime(0.1*60);
+        }
+        return
+      }
+      this.setState({ time: this.getSeconds() })
+      this.countdown();
+    }, 1000);
   }
 
   render() {
